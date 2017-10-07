@@ -4,6 +4,7 @@ import Login from './src/Login';
 import Search from './src/Search';
 import Deck from './src/components/Deck';
 import Decklist from './src/Decklist';
+import DeckCreation from './src/DeckCreation';
 
 export default class App extends React.Component {
   render() {
@@ -11,6 +12,7 @@ export default class App extends React.Component {
        //<Login/>
       //<Search/>
       <Decklist/>
+      //<DeckCreation />
     );
   }
 }
