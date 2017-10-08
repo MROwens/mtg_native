@@ -5,13 +5,14 @@ import Search from './src/Search';
 import Deck from './src/components/Deck';
 import Decklist from './src/Decklist';
 import DeckCreation from './src/DeckCreation';
+import Nav from './src/components/Nav';
 
 export default class App extends React.Component {
   render() {
     return (
       //<Login/>
-      <Search/>
-      //<Decklist/>
+      //<Search/>
+      <Decklist/>
       //<DeckCreation />
     );
   }

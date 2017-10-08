@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, TextInput, Button, Image, FlatList } from 'react-native';
 import Header from './components/Header';
 import Deck from './components/Deck';
+import Nav from './components/Nav'
 
 export default class App extends React.Component {
   render() {
@@ -21,6 +22,9 @@ export default class App extends React.Component {
             ]}
             renderItem={({item}) => <Text style={styles.card}>{item.key}</Text>}
           />
+        </View>
+        <View style={styles.nav}>
+          <Nav/>
         </View>
       </View>
     );
@@ -43,7 +47,7 @@ const styles = StyleSheet.create({
   },
   decklist: {
     flex: 2.3,
-    marginTop: 20
+    marginTop: 20,
   },
   card: {
     backgroundColor: '#F3C9B7',

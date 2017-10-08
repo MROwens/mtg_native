@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, Button, Image, FlatList } from 'react-native';
 import Header from './components/Header';
+import Nav from './components/Nav';
 
 export default class App extends React.Component {
   render() {
@@ -25,6 +26,7 @@ export default class App extends React.Component {
             renderItem={({item}) => <Text style={styles.card}>{item.key}</Text>}
           />
         </View>
+      <Nav/>
       </View>
     );
   }
@@ -52,7 +54,10 @@ const styles = StyleSheet.create({
   search: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
+    borderBottomWidth: 1,
+    paddingBottom: 15,
+    backgroundColor: '#262626'
   },
   img: {
     flex: 1,
