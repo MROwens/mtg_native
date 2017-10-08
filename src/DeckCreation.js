@@ -14,8 +14,12 @@ export default class App extends React.Component {
         </View>
         <View style={styles.decklist}>
           <FlatList
-            data={[{key: 'Card Name1'}, {key: 'Card Name2'}, {key: 'Card Name3'}, {key: 'Card Name4'}]}
-            renderItem={({item}) => <Text>{item.key}</Text>}
+            data={[
+            {key: 'Card Name1'}, {key: 'Card Name2'}, {key: 'Card Name3'},
+            {key: 'Card Name4'}, {key: 'Card Name5'}, {key: 'Card Name6'},
+            {key: 'Card Name7'}, {key: 'Card Name8'}, {key: 'Card Name9'},
+            ]}
+            renderItem={({item}) => <Text style={styles.card}>{item.key}</Text>}
           />
         </View>
       </View>
@@ -38,7 +42,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   decklist: {
-    flex: 3,
-    marginTop: 40
+    flex: 2.3,
+    marginTop: 20
+  },
+  card: {
+    backgroundColor: '#F3C9B7',
+    borderWidth: 4,
+    borderColor: '#F2B093',
+    marginTop: 1,
+    padding: 20,
+    fontSize: 25
   }
 });

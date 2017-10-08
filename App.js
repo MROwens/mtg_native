@@ -9,9 +9,9 @@ import DeckCreation from './src/DeckCreation';
 export default class App extends React.Component {
   render() {
     return (
-       //<Login/>
-      //<Search/>
-      <Decklist/>
+      //<Login/>
+      <Search/>
+      //<Decklist/>
       //<DeckCreation />
     );
   }
