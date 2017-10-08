@@ -12,8 +12,8 @@ export default class App extends React.Component {
     return (
       //<Login/>
       //<Search/>
-      <Decklist/>
-      //<DeckCreation />
+      //<Decklist/>
+      <DeckCreation />
     );
   }
 }
