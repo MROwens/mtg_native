@@ -10,9 +10,6 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <Image style={styles.img} source={require('../assets/img/app_background.png')} />
-        <View>
-          <Header />
-        </View>
         <View style={styles.decklist}>
           <Deck/>
           <Text style={styles.newdeck}>New Deck</Text>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, Button, Image } from 'react-native';
-
+import { Actions } from 'react-native-router-flux';
 
 export default class App extends React.Component {
   render() {
@@ -15,7 +15,7 @@ export default class App extends React.Component {
         <View style={styles.form}>
           <TextInput value='Username' style={styles.textinput}/>
           <TextInput value='Password' style={styles.textinput}/>
-          <Button onPress={null} style={styles.button} title='Login'/>
+          <Button onPress={() => Actions.decklist()} style={styles.button} title='Login'/>
         </View>
       </View>
     );

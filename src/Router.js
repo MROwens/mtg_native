@@ -9,7 +9,7 @@ const RouterComponent = () => {
     <Router >
       <Stack key='root'>
         <Scene key='login' component={Login} title='Login'/>
-        <Scene key='decklist' component={Decklist} title='Decklist' />
+        <Scene key='decklist' component={Decklist} title='Decklist'  />
       </Stack>
     </Router>
   )
