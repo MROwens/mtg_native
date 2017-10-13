@@ -8,7 +8,7 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <Image style={styles.img} source={require('../assets/img/app_background.png')} />
-        <Header/>
+      <Header />
         <View style={styles.search}>
           <TextInput value='Card name' style={styles.textinput}/>
           <TextInput value='Color' style={styles.textinput}/>

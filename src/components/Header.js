@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, TextInput, Button, Image } from 'react-native';
 
 
 export default class Header extends React.Component {
-  render() {
+  render(props) {
     return (
       <View style={styles.container}>
         <Text style={styles.text}>Search</Text>

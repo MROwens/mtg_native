@@ -7,13 +7,16 @@ import Decklist from './src/Decklist';
 import DeckCreation from './src/DeckCreation';
 import Nav from './src/components/Nav';
 
+import Router from './src/Router';
+
 export default class App extends React.Component {
   render() {
     return (
       //<Login/>
       //<Search/>
       //<Decklist/>
-      <DeckCreation />
+      //<DeckCreation />
+      <Router />
     );
   }
 }
