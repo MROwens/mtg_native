@@ -1,14 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, Button, Image } from 'react-native';
-
+import { Actions } from 'react-native-router-flux';
 
 export default class Nav extends React.Component {
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.nav}>
-          <Text style={styles.text}>Search</Text>
-          <Text style={styles.text}>Decklist</Text>
+          <Button title="Search" onPress={() => Actions.search()} ><Text style={styles.text}>Search</Text></Button>
+          <Button title="Decklist" onPress={() => Actions.decklist()} ><Text style={styles.text}>Decklist</Text></Button>
         </View>
       </View>
     );
