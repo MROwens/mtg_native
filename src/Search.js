@@ -8,7 +8,6 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <Image style={styles.img} source={require('../assets/img/app_background.png')} />
-      <Header />
         <View style={styles.search}>
           <TextInput value='Card name' style={styles.textinput}/>
           <TextInput value='Color' style={styles.textinput}/>
@@ -26,7 +25,7 @@ export default class App extends React.Component {
             renderItem={({item}) => <Text style={styles.card}>{item.key}</Text>}
           />
         </View>
-      <Nav/>
+      {/* <Nav/> */}
       </View>
     );
   }
@@ -39,6 +38,7 @@ const styles = StyleSheet.create({
     minWidth: 400,
     height: 500,
     backgroundColor: 'transparent',
+    marginTop: 30
   },
   textinput: {
     width: 200,

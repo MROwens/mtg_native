@@ -23,9 +23,9 @@ export default class App extends React.Component {
             renderItem={({item}) => <Text style={styles.card}>{item.key}</Text>}
           />
         </View>
-        <View style={styles.nav}>
+        {/* <View style={styles.nav}>
           <Nav/>
-        </View>
+        </View> */}
       </View>
     );
   }
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
-    flex: 1
+    flex: .7
   },
   img: {
     flex: 1,
@@ -46,8 +46,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   decklist: {
-    flex: 2.3,
-    marginTop: 20,
+    flex: 2,
   },
   card: {
     backgroundColor: '#F3C9B7',
