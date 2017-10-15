@@ -9,17 +9,13 @@ import Search from './Search';
 
 const SearchIcon = ()=>{
   return(
-    // <Text style={{fontSize: 20}}>{title}</Text>
     <Image style={{width: 30, height: 30}} resizeMode='contain' source={require('../assets/img/search-128.png')}/>
-
   )
 }
 
 const CardIcon = ()=>{
   return(
-    // <Text style={{fontSize: 20}}>{title}</Text>
     <Image style={{width: 30, height: 30}} resizeMode='contain' source={require('../assets/img/cards.png')}/>
-
   )
 }
 

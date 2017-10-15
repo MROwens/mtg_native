@@ -1,8 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, Button, Image } from 'react-native';
-import Header from './components/Header';
 import Deck from './components/Deck';
-import Nav from './components/Nav';
 import { Tabs } from 'react-native-router-flux';
 
 

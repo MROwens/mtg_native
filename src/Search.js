@@ -1,7 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, Button, Image, FlatList } from 'react-native';
-import Header from './components/Header';
-import Nav from './components/Nav';
 
 export default class App extends React.Component {
   render() {
