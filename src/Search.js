@@ -38,7 +38,6 @@ const styles = StyleSheet.create({
     minWidth: 400,
     height: 500,
     backgroundColor: 'transparent',
-    marginTop: 30
   },
   textinput: {
     width: 200,

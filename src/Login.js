@@ -15,7 +15,7 @@ export default class App extends React.Component {
         <View style={styles.form}>
           <TextInput value='Username' style={styles.textinput}/>
           <TextInput value='Password' style={styles.textinput}/>
-          <Button onPress={() => Actions.decklist()} style={styles.button} title='Login'/>
+          <Button onPress={() => Actions.main()} style={styles.button} title='Login'/>
         </View>
       </View>
     );
