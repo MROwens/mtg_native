@@ -14,7 +14,6 @@ export default class App extends React.Component {
         <View style={styles.decklist}>
           <Deck/>
         </View>
-          {/* <Nav/> */}
       </View>
     );
   }

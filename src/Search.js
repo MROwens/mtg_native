@@ -9,8 +9,8 @@ export default class App extends React.Component {
       <View style={styles.container}>
         <Image style={styles.img} source={require('../assets/img/app_background.png')} />
         <View style={styles.search}>
-          <TextInput value='Card name' style={styles.textinput}/>
-          <TextInput value='Color' style={styles.textinput}/>
+          <TextInput placeholder='Card name' style={styles.textinput}/>
+          <TextInput placeholder='Color' style={styles.textinput}/>
         </View>
         <View style={styles.list}>
           <FlatList numColumns='2'
@@ -25,7 +25,6 @@ export default class App extends React.Component {
             renderItem={({item}) => <Text style={styles.card}>{item.key}</Text>}
           />
         </View>
-      {/* <Nav/> */}
       </View>
     );
   }

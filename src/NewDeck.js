@@ -20,9 +20,6 @@ export default class App extends React.Component {
             renderItem={({item}) => <Text style={styles.card}>{item.key}</Text>}
           />
         </View>
-        <View style={styles.nav}>
-          <Nav/>
-        </View>
       </View>
     );
   }
