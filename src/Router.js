@@ -22,12 +22,12 @@ const CardIcon = ()=>{
 const RouterComponent = () => {
   return(
     <Router >
-      <Scene key='root'>
+      <Scene hideNavBar={true} key='root'>
         <Scene hideNavBar={true}>
           <Scene hideNavBar={true} key='login' component={Login} title='Login'/>
         </Scene>
 
-        <Scene animationEnabled={true} key="tabbar" tabs tabBarStyles={{backgroundColor: '#FFF'}}>
+        <Stack animationEnabled={true} key="tabbar" tabs tabBarStyles={{backgroundColor: '#FFF'}}>
 
           <Scene key='main' title='Decklist' icon={CardIcon}>
 
@@ -48,7 +48,7 @@ const RouterComponent = () => {
           </Scene>
 
 
-        </Scene>
+        </Stack>
 
       </Scene>
     </Router>
