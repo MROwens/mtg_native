@@ -1,9 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, Button, Image, FlatList } from 'react-native';
+import { connect } from 'react-redux';
 import Deck from './components/Deck';
 
-export default class App extends React.Component {
+class DeckCreation extends React.Component {
   render() {
+    console.log(this.props);
     return (
       <View style={styles.container}>
         <Image style={styles.img} source={require('../assets/img/app_background.png')} />
@@ -24,6 +26,11 @@ export default class App extends React.Component {
       </View>
     );
   }
+}
+
+const mapStateToProps = state => {
+  return {decklist: state.decklist};
+  console.log(state);
 }
 
 const styles = StyleSheet.create({
@@ -52,3 +59,5 @@ const styles = StyleSheet.create({
     fontSize: 25
   }
 });
+
+export default connect(mapStateToProps)(DeckCreation);

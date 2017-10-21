@@ -1,9 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableHighlight, Image, FlatList } from 'react-native';
-
+import { connect } from 'react-redux';
+import * as actions from './actions';
 import axios from 'axios';
 
-export default class Search extends React.Component {
+class Search extends React.Component {
 
   constructor(props){
     super(props)
@@ -21,14 +22,15 @@ export default class Search extends React.Component {
     .then(response => this.setState({cards: response.data.cards}));
   }
 
-  saveSelected(item){
-    this.setState({selected: item.name});
-    console.log(this.state.selected)
-  }
+  // saveSelected(item){
+  //   this.setState({selected: item.name});
+  //   console.log(this.state.selected)
+  // }
 
 
 
   render() {
+    console.log(this.props);
     return (
       <View style={styles.container}>
         <Image style={styles.img} source={require('../assets/img/app_background.png')} />
@@ -39,7 +41,7 @@ export default class Search extends React.Component {
         <View style={styles.list}>
           <FlatList numColumns='2'
             data={this.state.cards}
-            renderItem={({item}) => <TouchableHighlight onPress={() => this.saveSelected(item)}><Image source={{uri: item.imageUrl}} style={styles.card}/></TouchableHighlight>}
+            renderItem={({item}) => <TouchableHighlight onPress={() => this.props.selectCard(item)}><Image source={{uri: item.imageUrl}} style={styles.card}/></TouchableHighlight>}
             keyExtractor={item => item.id}
           />
         </View>
@@ -97,3 +99,5 @@ const styles = StyleSheet.create({
     flex: 9
   }
 });
+
+export default connect(null, actions)(Search);
