@@ -14,13 +14,8 @@ class DeckCreation extends React.Component {
         </View>
         <View style={styles.decklist}>
           <FlatList
-            data={[
-            {key: 'Card Name1'}, {key: 'Card Name2'}, {key: 'Card Name3'},
-            {key: 'Card Name4'}, {key: 'Card Name5'}, {key: 'Card Name6'},
-            {key: 'Card Name7'}, {key: 'Card Name8'}, {key: 'Card Name9'},
-            {key: 'Card Name10'}, {key: 'Card Name11'}, {key: 'Card Name12'},
-            ]}
-            renderItem={({item}) => <Text style={styles.card}>{item.key}</Text>}
+            data={this.props.decklist}
+            renderItem={({item}) => <Text style={styles.card}>{item.name}</Text>}
           />
         </View>
       </View>
