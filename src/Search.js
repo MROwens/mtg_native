@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput, Button, Image, FlatList } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableHighlight, Image, FlatList } from 'react-native';
 
 import axios from 'axios';
 
@@ -10,7 +10,8 @@ export default class Search extends React.Component {
 
     this.state = {
       cardName: '',
-      cards: []
+      cards: [],
+      selected: []
     }
 
   }
@@ -18,6 +19,11 @@ export default class Search extends React.Component {
   searchForCards(e){
     axios.get(`https://api.magicthegathering.io/v1/cards?name=${this.state.cardName}&gameFormat=standard`)
     .then(response => this.setState({cards: response.data.cards}));
+  }
+
+  saveSelected(item){
+    this.setState({selected: item.name});
+    console.log(this.state.selected)
   }
 
 
@@ -33,7 +39,7 @@ export default class Search extends React.Component {
         <View style={styles.list}>
           <FlatList numColumns='2'
             data={this.state.cards}
-            renderItem={({item}) => <Image source={{uri: item.imageUrl}} style={styles.card}/>}
+            renderItem={({item}) => <TouchableHighlight onPress={() => this.saveSelected(item)}><Image source={{uri: item.imageUrl}} style={styles.card}/></TouchableHighlight>}
             keyExtractor={item => item.id}
           />
         </View>
