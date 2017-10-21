@@ -1,26 +1,40 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, Button, Image, FlatList } from 'react-native';
 
-export default class App extends React.Component {
+import axios from 'axios';
+
+export default class Search extends React.Component {
+
+  constructor(props){
+    super(props)
+
+    this.state = {
+      cardName: '',
+      cards: []
+    }
+
+  }
+
+  searchForCards(e){
+    axios.get(`https://api.magicthegathering.io/v1/cards?name=${this.state.cardName}&gameFormat=standard`)
+    .then(response => this.setState({cards: response.data.cards}));
+  }
+
+
+
   render() {
     return (
       <View style={styles.container}>
         <Image style={styles.img} source={require('../assets/img/app_background.png')} />
         <View style={styles.search}>
-          <TextInput placeholder='Card name' style={styles.textinput}/>
+          <TextInput onChangeText={(text) => this.setState({cardName: text})} onSubmitEditing={() => this.searchForCards()} placeholder='Card name' style={styles.textinput}/>
           <TextInput placeholder='Color' style={styles.textinput}/>
         </View>
         <View style={styles.list}>
           <FlatList numColumns='2'
-            data={[
-            {key: 'a'}, {key: 'b'}, {key: 'c'},
-            {key: 'd'}, {key: 'e'}, {key: 'f'},
-            {key: 'g'}, {key: 'h'}, {key: 'i'},
-            {key: 'j'}, {key: 'k'}, {key: 'l'},
-            {key: 'm'}, {key: 'n'}, {key: 'o'},
-            {key: 'p'}, {key: 'q'}, {key: 'r'}
-          ]}
-            renderItem={({item}) => <Text style={styles.card}>{item.key}</Text>}
+            data={this.state.cards}
+            renderItem={({item}) => <Image source={{uri: item.imageUrl}} style={styles.card}/>}
+            keyExtractor={item => item.id}
           />
         </View>
       </View>

@@ -1,5 +1,8 @@
 {
   "expo": {
-    "sdkVersion": "21.0.0"
+    "name": "My app",
+    "slug": "my-app",
+    "sdkVersion": "21.0.0",
+    "privacy": "public"
   }
 }
