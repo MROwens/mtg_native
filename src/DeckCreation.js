@@ -1,6 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput, Button, Image, FlatList } from 'react-native';
+import { StyleSheet, Text, View, Image, FlatList, TouchableHighlight } from 'react-native';
 import { connect } from 'react-redux';
+import * as actions from './actions';
 import Deck from './components/Deck';
 
 class DeckCreation extends React.Component {
@@ -15,14 +16,15 @@ class DeckCreation extends React.Component {
         <View style={styles.decklist}>
           <FlatList
             data={this.props.decklist}
-            renderItem={({item}) => <Text style={styles.card}>{item.name}</Text>}
+            renderItem={({item}) => <TouchableHighlight onPress={() => this.props.removeCard(item.name)}><Text style={styles.card}>{item.name}</Text></TouchableHighlight>}
+            keyExtractor={item => item.id}
           />
         </View>
       </View>
     );
   }
 }
-
+//makes state availible to this components props
 const mapStateToProps = state => {
   return {decklist: state.decklist};
   console.log(state);
@@ -55,4 +57,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default connect(mapStateToProps)(DeckCreation);
+export default connect(mapStateToProps, actions)(DeckCreation);

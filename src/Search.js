@@ -5,28 +5,21 @@ import * as actions from './actions';
 import axios from 'axios';
 
 class Search extends React.Component {
-
+//local state for card search
   constructor(props){
     super(props)
 
     this.state = {
       cardName: '',
-      cards: [],
-      selected: []
+      cards: []
     }
 
   }
-
+//hit mtg api
   searchForCards(e){
     axios.get(`https://api.magicthegathering.io/v1/cards?name=${this.state.cardName}&gameFormat=standard`)
     .then(response => this.setState({cards: response.data.cards}));
   }
-
-  // saveSelected(item){
-  //   this.setState({selected: item.name});
-  //   console.log(this.state.selected)
-  // }
-
 
 
   render() {

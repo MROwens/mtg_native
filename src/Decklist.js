@@ -1,10 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput, Button, Image } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import Deck from './components/Deck';
 import { Tabs } from 'react-native-router-flux';
 
 
-export default class App extends React.Component {
+export default class Decklist extends React.Component {
   render() {
     return (
       <View style={styles.container}>

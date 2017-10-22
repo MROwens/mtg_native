@@ -1,6 +1,12 @@
+//reducers to catch actions
 export default (state = [], action) => {
-  if (action.type === 'select_card'){
-    return [...state, action.payload];
+  switch(action.type){
+    case 'select_card':
+      return [...state, action.payload]
+    case 'remove_card':
+      const cardId = action.payload;
+      return state.filter(card => card.name !== cardId);;
+    default:
+    return state;
   }
-  return state;
 };
