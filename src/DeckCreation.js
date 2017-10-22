@@ -6,7 +6,6 @@ import Deck from './components/Deck';
 
 class DeckCreation extends React.Component {
   render() {
-    console.log(this.props);
     return (
       <View style={styles.container}>
         <Image style={styles.img} source={require('../assets/img/app_background.png')} />
@@ -27,7 +26,6 @@ class DeckCreation extends React.Component {
 //makes state availible to this components props
 const mapStateToProps = state => {
   return {decklist: state.decklist};
-  console.log(state);
 }
 
 const styles = StyleSheet.create({

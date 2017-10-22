@@ -23,7 +23,6 @@ class Search extends React.Component {
 
 
   render() {
-    console.log(this.props);
     return (
       <View style={styles.container}>
         <Image style={styles.img} source={require('../assets/img/app_background.png')} />

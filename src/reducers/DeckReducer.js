@@ -1,4 +1,4 @@
-//reducers to catch actions
+//reducers to catch actions / handle data
 export default (state = [], action) => {
   switch(action.type){
     case 'select_card':
