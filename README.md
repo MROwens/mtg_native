@@ -33,7 +33,7 @@ Once the feature is complete and bug free, make a pull request into the master b
 
 [Making a pull request](https://help.github.com/articles/creating-a-pull-request/)
 
-After the pull request is approved and the branches are merged, make a Github release.  
+After the pull request is approved and the branches are merged, make a Github release. Be sure to make use of [Semantic Versioning](http://semver.org/) when tagging a release.
 
 [Tagging a Release](https://help.github.com/articles/creating-releases/)
 
