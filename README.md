@@ -25,14 +25,19 @@ Redirect into cloned project and run:
 `npm run ios`
 
 ## Making a Release
-For any additional feature you would like to add to Magic: The Deckbuilder create a feature branch off of the master.
+For any additional feature you would like to add to Magic: The Deckbuilder create a feature branch off of the master.  
+
 `git checkout -b *branchName*`
 
-Once the feature is complete and bug free, make a pull request into the master branch.
+Once the feature is complete and bug free, make a pull request into the master branch.  
+
 [Making a pull request](https://help.github.com/articles/creating-a-pull-request/)
 
-After the pull request is approved and the branches are merged, make a Github release.
+After the pull request is approved and the branches are merged, make a Github release.  
+
 [Tagging a Release](https://help.github.com/articles/creating-releases/)
 
 ##Create React Native App
-All information pertaining to create-react-native-app:
+All information on create-react-native-app pertaining to this project:  
+
+[REACTNATIVEAPP](https://github.com/MROwens/mtg_native/blob/dev/REACTNATIVEAPP.md)
