@@ -23,8 +23,9 @@ Redirect into cloned project and run:
 
 ### Run project
 `npm run ios`
+  
 
-## Making a Release
+## Tagging a Release
 For any additional feature you would like to add to Magic: The Deckbuilder create a feature branch off of the master.  
 
 `git checkout -b *branchName*`
