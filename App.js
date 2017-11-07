@@ -1,20 +1,17 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput, Button, Image } from 'react-native';
-import Login from './src/Login';
-import Search from './src/Search';
-import Deck from './src/components/Deck';
-import Decklist from './src/Decklist';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import reducers from './src/reducers';
+import Router from './src/Router';
 
 export default class App extends React.Component {
   render() {
     return (
-       //<Login/>
-      //<Search/>
-      <Decklist/>
+      //redux store
+      //react native router flux routing
+      <Provider store={createStore(reducers)}>
+        <Router />
+      </Provider>
     );
   }
 }
-
-const styles = StyleSheet.create({
-
-});

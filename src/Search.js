@@ -1,24 +1,42 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput, Button, Image, FlatList } from 'react-native';
-import Header from './components/Header';
+import { StyleSheet, Text, View, TextInput, TouchableHighlight, Image, FlatList } from 'react-native';
+import { connect } from 'react-redux';
+import * as actions from './actions';
+import axios from 'axios';
 
-export default class App extends React.Component {
+class Search extends React.Component {
+//local state for card search
+  constructor(props){
+    super(props)
+
+    this.state = {
+      cardName: '',
+      cards: []
+    }
+
+  }
+//hit mtg api
+  searchForCards(e){
+    axios.get(`https://api.magicthegathering.io/v1/cards?name=${this.state.cardName}&gameFormat=standard`)
+    .then(response => this.setState({cards: response.data.cards}));
+  }
+
+
   render() {
     return (
       <View style={styles.container}>
         <Image style={styles.img} source={require('../assets/img/app_background.png')} />
-        <Header/>
-        <FlatList  numColumns='3'
-          data={[
-          {key: 'a'}, {key: 'b'}, {key: 'c'},
-          {key: 'd'}, {key: 'e'}, {key: 'f'},
-          {key: 'g'}, {key: 'h'}, {key: 'i'},
-          {key: 'j'}, {key: 'k'}, {key: 'l'},
-          {key: 'm'}, {key: 'n'}, {key: 'o'},
-          {key: 'p'}, {key: 'q'}, {key: 'r'}
-        ]}
-          renderItem={({item}) => <Text style={styles.list}>{item.key}</Text>}
-        />
+        <View style={styles.search}>
+          <TextInput onChangeText={(text) => this.setState({cardName: text})} onSubmitEditing={() => this.searchForCards()} placeholder='Card name' style={styles.textinput}/>
+          <TextInput placeholder='Color' style={styles.textinput}/>
+        </View>
+        <View style={styles.list}>
+          <FlatList numColumns='2'
+            data={this.state.cards}
+            renderItem={({item}) => <TouchableHighlight onPress={() => this.props.selectCard(item)}><Image source={{uri: item.imageUrl}} style={styles.card}/></TouchableHighlight>}
+            keyExtractor={item => item.id}
+          />
+        </View>
       </View>
     );
   }
@@ -32,6 +50,25 @@ const styles = StyleSheet.create({
     height: 500,
     backgroundColor: 'transparent',
   },
+  textinput: {
+    width: 200,
+    height: 50,
+    backgroundColor: 'white',
+    borderWidth: 1,
+    justifyContent: 'center',
+    borderRadius: 10,
+    marginTop: 10,
+    fontSize: 25,
+    padding: 5
+  },
+  search: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    borderBottomWidth: 1,
+    paddingBottom: 15,
+    backgroundColor: '#262626'
+  },
   img: {
     flex: 1,
     position: 'absolute',
@@ -39,15 +76,20 @@ const styles = StyleSheet.create({
     height: '100%',
     justifyContent: 'center',
   },
-  list: {
+  card: {
     justifyContent: 'center',
     backgroundColor: '#CCC',
     marginTop: 30,
     marginLeft: 20,
-    height: 150,
-    width: 100,
+    height: 250,
+    width: 170,
     shadowColor: '#000',
     shadowOffset: {width: 3, height: 2},
     shadowOpacity: .2
+  },
+  list: {
+    flex: 9
   }
 });
+
+export default connect(null, actions)(Search);
