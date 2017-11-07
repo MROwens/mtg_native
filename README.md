@@ -15,10 +15,10 @@ A mobile application built using React Native that allows you to create deck lis
 * React-Native-Router-Flux
 
 ### Installation
-Clone repo:
+Clone repo:  
 `git clone git@github.com:MROwens/mtg_native.git`
 
-Redirect into cloned project and run:
+Redirect into cloned project and run:  
 `npm i`
 
 ### Run project
@@ -37,7 +37,7 @@ After the pull request is approved and the branches are merged, make a Github re
 
 [Tagging a Release](https://help.github.com/articles/creating-releases/)
 
-##Create React Native App
+## Create React Native App
 All information on create-react-native-app pertaining to this project:  
 
 [REACTNATIVEAPP](https://github.com/MROwens/mtg_native/blob/dev/REACTNATIVEAPP.md)
