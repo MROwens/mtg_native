@@ -27,13 +27,13 @@ const RouterComponent = () => {
           <Scene hideNavBar={true} key='login' component={Login} title='Login'/>
         </Scene>
 
-        {/* <Stack animationEnabled={true} key="tabbar" tabs tabBarStyles={{backgroundColor: '#FFF'}}> */}
-
           <Scene key='main' title='Decklist' icon={CardIcon}>
 
             <Scene
               onRight={() => Actions.newDeck()}
+              onLeft={() => Actions.search()}
               rightTitle='New Deck'
+              leftTitle='Search'
               key='decklist'
               component={Decklist}
               title='Decklist'
@@ -44,12 +44,6 @@ const RouterComponent = () => {
             <Scene key='search' back={true} component={Search} title='Search' />
 
           </Scene>
-
-
-
-
-
-        {/* </Stack> */}
 
       </Scene>
     </Router>
