@@ -10,7 +10,7 @@ export default class Deck extends React.Component {
           <View style={styles.deck}>
             <Image style={styles.img} source={require('../../assets/img/card_back.png')} />
             <View style={styles.decktype}></View>
-            {/* <Text style={styles.text}>Deck Name</Text> */}
+            <Text style={styles.text}>Deck Name</Text>
           </View>
         </TouchableHighlight>
       </View>
@@ -30,11 +30,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   text: {
-    color: 'white',
-    fontSize: 50,
-    marginTop: 40,
-    marginLeft: 30,
-    backgroundColor: 'transparent'
+    color: 'black',
+    fontSize: 20,
+    //marginTop: 40,
+    //marginLeft: 30,
+    backgroundColor: 'transparent',
+    position: 'relative',
+    top: 110,
+    left: -135
   },
   deck: {
     flexDirection: 'row',

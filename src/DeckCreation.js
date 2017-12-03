@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, FlatList, TouchableHighlight } from 'react-native';
 import { connect } from 'react-redux';
 import * as actions from './actions';
-import Deck from './components/Deck';
+import DeckTitle from './components/DeckTitle';
 
 class DeckCreation extends React.Component {
   render() {
@@ -10,7 +10,7 @@ class DeckCreation extends React.Component {
       <View style={styles.container}>
         <Image style={styles.img} source={require('../assets/img/app_background.png')} />
         <View style={styles.header}>
-          <Deck/>
+          <DeckTitle/>
         </View>
         <View style={styles.decklist}>
           <FlatList
