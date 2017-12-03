@@ -38,14 +38,15 @@ const RouterComponent = () => {
               component={Decklist}
               title='Decklist'
             />
-            <Scene back={true} key="deckCreation" component={DeckCreation} title='Add Cards' />
+            <Scene back={true} key="deckCreation" component={DeckCreation} rightTitle='Add Cards' onRight={() => Actions.search()} />
             <Scene key='newDeck' component={NewDeck} title='Add Cards' />
 
+            <Scene key='search' back={true} component={Search} title='Search' />
+
           </Scene>
 
-          <Scene key='search' title='Search' icon={SearchIcon}>
-            <Scene key='search' component={Search} title='Search' />
-          </Scene>
+
+
 
 
         {/* </Stack> */}

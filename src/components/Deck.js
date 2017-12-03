@@ -59,6 +59,6 @@ const styles = StyleSheet.create({
     borderColor: '#AB1F23',
     shadowColor: '#000',
     shadowOffset: {width: 0, height: 2},
-    shadowOpacity: .2
+    shadowOpacity: .4
   }
 });
