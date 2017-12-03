@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import Deck from './components/Deck';
 import { Tabs } from 'react-native-router-flux';
-
+import ManaList from './components/ManaList';
 
 export default class Decklist extends React.Component {
   render() {
@@ -15,6 +15,7 @@ export default class Decklist extends React.Component {
         </View>
         <View style={styles.decklist}>
           <Deck/>
+          {/* <ManaList/> */}
         </View>
       </View>
     );
