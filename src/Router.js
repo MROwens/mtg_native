@@ -27,7 +27,7 @@ const RouterComponent = () => {
           <Scene hideNavBar={true} key='login' component={Login} title='Login'/>
         </Scene>
 
-        <Stack animationEnabled={true} key="tabbar" tabs tabBarStyles={{backgroundColor: '#FFF'}}>
+        {/* <Stack animationEnabled={true} key="tabbar" tabs tabBarStyles={{backgroundColor: '#FFF'}}> */}
 
           <Scene key='main' title='Decklist' icon={CardIcon}>
 
@@ -48,7 +48,7 @@ const RouterComponent = () => {
           </Scene>
 
 
-        </Stack>
+        {/* </Stack> */}
 
       </Scene>
     </Router>

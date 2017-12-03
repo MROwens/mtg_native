@@ -8,9 +8,9 @@ export default class Deck extends React.Component {
       <View style={styles.container}>
         <TouchableHighlight onPress={() => Actions.deckCreation()} >
           <View style={styles.deck}>
-            <Image style={styles.img} source={require('../../assets/img/red_deck.png')} />
+            <Image style={styles.img} source={require('../../assets/img/card_back.png')} />
             <View style={styles.decktype}></View>
-            <Text style={styles.text}>Deck Name</Text>
+            {/* <Text style={styles.text}>Deck Name</Text> */}
           </View>
         </TouchableHighlight>
       </View>
@@ -41,11 +41,14 @@ const styles = StyleSheet.create({
     shadowColor: '#000',
     shadowOffset: {width: 0, height: 2},
     shadowOpacity: .2,
-    backgroundColor: '#CCC'
+    backgroundColor: '#CCC',
+    height: 250,
+    width: 170,
+    marginLeft: 20
   },
   decktype: {
-    width: 10,
-    height: 150,
+    width: 170,
+    height: 30,
     backgroundColor: 'red',
   }
 });
