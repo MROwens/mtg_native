@@ -47,8 +47,15 @@ const styles = StyleSheet.create({
     marginLeft: 20
   },
   decktype: {
+    marginTop: 100,
     width: 170,
-    height: 30,
-    backgroundColor: 'red',
+    height: 45,
+    backgroundColor: '#F1AA9D',
+    borderTopWidth: 4,
+    borderBottomWidth: 4,
+    borderColor: '#AB1F23',
+    shadowColor: '#000',
+    shadowOffset: {width: 0, height: 2},
+    shadowOpacity: .2
   }
 });
