@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Image, FlatList, TouchableHighlight } from 'rea
 import { connect } from 'react-redux';
 import * as actions from './actions';
 import DeckTitle from './components/DeckTitle';
+import CardList from './components/CardList';
 
 class DeckCreation extends React.Component {
   render() {
@@ -15,7 +16,7 @@ class DeckCreation extends React.Component {
         <View style={styles.decklist}>
           <FlatList
             data={this.props.decklist}
-            renderItem={({item}) => <TouchableHighlight onPress={() => this.props.removeCard(item.name)}><Text style={styles.card}>{item.name}</Text></TouchableHighlight>}
+            renderItem={({item}) => <TouchableHighlight onPress={() => this.props.removeCard(item.name)}><View><CardList name={item.name} mana={item.manaCost}/></View></TouchableHighlight>}
             keyExtractor={item => item.id}
           />
         </View>

@@ -6,9 +6,7 @@ export default class ManaList extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image style={styles.img} source={require('../../assets/img/mana_red.png')} />
-        <Image style={styles.img} source={require('../../assets/img/mana_red.png')} />
-        <Image style={styles.img} source={require('../../assets/img/mana_red.png')} />
+        <Text>{this.props.mana}</Text>
       </View>
     );
   }
@@ -23,6 +21,5 @@ const styles = StyleSheet.create({
     width: 20,
     height: 20,
     margin: 2
-    //flexDirection: 'row'
   }
 });

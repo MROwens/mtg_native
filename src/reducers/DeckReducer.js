@@ -5,7 +5,7 @@ export default (state = [], action) => {
       return [...state, action.payload]
     case 'remove_card':
       const cardId = action.payload;
-      return state.filter(card => card.name !== cardId);;
+      return state.filter(card => card.name !== cardId);
     default:
     return state;
   }
