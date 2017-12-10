@@ -15,7 +15,6 @@ export default class Decklist extends React.Component {
         </View>
         <View style={styles.decklist}>
           <Deck/>
-          {/* <ManaList/> */}
         </View>
       </View>
     );

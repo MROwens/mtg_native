@@ -17,7 +17,7 @@ class DeckCreation extends React.Component {
           <FlatList
             data={this.props.decklist}
             renderItem={({item}) => <TouchableHighlight onPress={() => this.props.removeCard(item.name)}><View><CardList name={item.name} mana={item.manaCost}/></View></TouchableHighlight>}
-            keyExtractor={item => item.id}
+            keyExtractor={item => (item.multiverseid += 1)}
           />
         </View>
       </View>

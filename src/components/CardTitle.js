@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   text: {
-    fontSize: 20,
+    fontSize: 25,
     marginBottom: 5
   }
 });
