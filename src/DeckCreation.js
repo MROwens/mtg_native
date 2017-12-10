@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   decklist: {
-    flex: 2,
+    flex: 2.5,
   },
   card: {
     backgroundColor: '#F3C9B7',

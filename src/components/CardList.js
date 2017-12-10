@@ -18,5 +18,9 @@ export default class Deck extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#F1AA9D',
+    borderWidth: 1,
+    borderColor: '#AD1F23',
+    padding: 20
   }
 });
