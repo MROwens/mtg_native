@@ -26,7 +26,7 @@ class DeckCreation extends React.Component {
 
     return (
       <Swipeout right={swipeOptions} autoClose={true} close={true}>
-        <TouchableHighlight onPress={() => Actions.deckCreation(card)}>
+        <TouchableHighlight onPress={() => Actions.cardView({card, title: card.name})}>
           <View>
             <CardList name={card.name} mana={card.manaCost}/>
           </View>

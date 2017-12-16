@@ -6,18 +6,9 @@ import Decklist from './Decklist';
 import NewDeck from './NewDeck';
 import DeckCreation from './DeckCreation';
 import Search from './Search';
-//tab icon
-const SearchIcon = ()=>{
-  return(
-    <Image style={{width: 30, height: 30}} resizeMode='contain' source={require('../assets/img/search-128.png')}/>
-  )
-}
-//tab icon
-const CardIcon = ()=>{
-  return(
-    <Image style={{width: 30, height: 30}} resizeMode='contain' source={require('../assets/img/cards.png')}/>
-  )
-}
+import CardView from './components/CardView';
+
+
 //react native router flux routes w/ tabs implementation
 const RouterComponent = () => {
   return(
@@ -27,7 +18,7 @@ const RouterComponent = () => {
           <Scene hideNavBar={true} key='login' component={Login} title='Login'/>
         </Scene>
 
-          <Scene key='main' title='Decklist' icon={CardIcon}>
+          <Scene key='main' title='Decklist'>
 
             <Scene
               onRight={() => Actions.newDeck()}
@@ -42,6 +33,8 @@ const RouterComponent = () => {
             <Scene key='newDeck' component={NewDeck} title='Add Cards' />
 
             <Scene key='search' back={true} component={Search} title='Search' />
+
+            <Scene key='cardView' back={true} component={CardView} title='Card' />
 
           </Scene>
 
