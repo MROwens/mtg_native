@@ -4,8 +4,37 @@ import { connect } from 'react-redux';
 import * as actions from './actions';
 import DeckTitle from './components/DeckTitle';
 import CardList from './components/CardList';
+import Swipeout from 'react-native-swipeout';
+import { Actions } from 'react-native-router-flux';
 
 class DeckCreation extends React.Component {
+
+  cardView(card){
+    return console.log(card.imageUrl)
+  }
+
+  renderCard(card){
+    let swipeOptions = [
+    {
+      text: 'Delete',
+      underlayColor: '#AD1F23',
+      backgroundColor: 'red',
+      type: 'delete',
+      onPress: () => {this.props.removeCard(card.name)},
+    }
+  ];
+
+    return (
+      <Swipeout right={swipeOptions} autoClose={true} close={true}>
+        <TouchableHighlight onPress={() => Actions.deckCreation(card)}>
+          <View>
+            <CardList name={card.name} mana={card.manaCost}/>
+          </View>
+        </TouchableHighlight>
+      </Swipeout>
+    )
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -16,13 +45,7 @@ class DeckCreation extends React.Component {
         <View style={styles.decklist}>
           <FlatList
             data={this.props.decklist}
-            renderItem={({item}) =>
-              <TouchableHighlight 
-                onPress={() => this.props.removeCard(item.name)}>
-                <View>
-                  <CardList name={item.name} mana={item.manaCost}/>
-                </View>
-              </TouchableHighlight>}
+            renderItem={({item}) => this.renderCard(item)}
             keyExtractor={item => (item.multiverseid += 1)}
           />
         </View>
