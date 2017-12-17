@@ -33,7 +33,11 @@ class Search extends React.Component {
         <View style={styles.list}>
           <FlatList numColumns='2'
             data={this.state.cards}
-            renderItem={({item}) => <TouchableHighlight onPress={() => this.props.selectCard(item)}><Image source={{uri: item.imageUrl}} style={styles.card}/></TouchableHighlight>}
+            renderItem={({item}) =>
+              <TouchableHighlight onPress={() => this.props.selectCard(item)}>
+                <Image source={{uri: item.imageUrl}} style={styles.card}/>
+              </TouchableHighlight>
+            }
             keyExtractor={item => item.id}
           />
         </View>

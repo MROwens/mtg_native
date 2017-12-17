@@ -2,21 +2,47 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, FlatList, TouchableHighlight } from 'react-native';
 import { connect } from 'react-redux';
 import * as actions from './actions';
-import Deck from './components/Deck';
+import DeckTitle from './components/DeckTitle';
+import CardList from './components/CardList';
+import Swipeout from 'react-native-swipeout';
+import { Actions } from 'react-native-router-flux';
 
 class DeckCreation extends React.Component {
+
+  renderCard(card){
+    let swipeOptions = [
+    {
+      text: 'Delete',
+      underlayColor: '#AD1F23',
+      backgroundColor: 'red',
+      type: 'delete',
+      onPress: () => {this.props.removeCard(card.name)},
+    }
+  ];
+
+    return (
+      <Swipeout right={swipeOptions} autoClose={true} close={true}>
+        <TouchableHighlight onPress={() => Actions.cardView({card, title: card.name})}>
+          <View>
+            <CardList name={card.name} mana={card.manaCost}/>
+          </View>
+        </TouchableHighlight>
+      </Swipeout>
+    )
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Image style={styles.img} source={require('../assets/img/app_background.png')} />
         <View style={styles.header}>
-          <Deck/>
+          <DeckTitle/>
         </View>
         <View style={styles.decklist}>
           <FlatList
             data={this.props.decklist}
-            renderItem={({item}) => <TouchableHighlight onPress={() => this.props.removeCard(item.name)}><Text style={styles.card}>{item.name}</Text></TouchableHighlight>}
-            keyExtractor={item => item.id}
+            renderItem={({item}) => this.renderCard(item)}
+            keyExtractor={item => (item.multiverseid += 1)}
           />
         </View>
       </View>
@@ -43,7 +69,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   decklist: {
-    flex: 2,
+    flex: 2.5,
   },
   card: {
     backgroundColor: '#F3C9B7',

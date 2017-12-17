@@ -2,13 +2,17 @@ import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import Deck from './components/Deck';
 import { Tabs } from 'react-native-router-flux';
-
+import ManaList from './components/ManaList';
 
 export default class Decklist extends React.Component {
   render() {
     return (
       <View style={styles.container}>
         <Image style={styles.img} source={require('../assets/img/app_background.png')} />
+        <View style={styles.decklist}>
+          <Deck/>
+          <Deck/>
+        </View>
         <View style={styles.decklist}>
           <Deck/>
         </View>
@@ -30,6 +34,7 @@ const styles = StyleSheet.create({
   },
   decklist: {
     flex: 1,
-    marginTop: 40
+    marginTop: 30,
+    flexDirection: 'row'
   }
 });

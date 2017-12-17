@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, FlatList } from 'react-native';
-import Deck from './components/Deck';
+import DeckTitle from './components/DeckTitle';
+
 
 export default class NewDeck extends React.Component {
   render() {
@@ -8,7 +9,7 @@ export default class NewDeck extends React.Component {
       <View style={styles.container}>
         <Image style={styles.img} source={require('../assets/img/app_background.png')} />
         <View style={styles.header}>
-          <Deck/>
+          <DeckTitle/>
         </View>
         <View style={styles.decklist}>
           <FlatList

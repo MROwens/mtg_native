@@ -8,7 +8,7 @@ export default class Deck extends React.Component {
       <View style={styles.container}>
         <TouchableHighlight onPress={() => Actions.deckCreation()} >
           <View style={styles.deck}>
-            <Image style={styles.img} source={require('../../assets/img/card_back.png')} />
+            <Image style={styles.img} source={require('../../assets/img/red_deck.png')} />
             <View style={styles.decktype}></View>
             <Text style={styles.text}>Deck Name</Text>
           </View>
@@ -30,35 +30,22 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   text: {
-    color: 'black',
-    fontSize: 20,
-    //marginTop: 40,
-    //marginLeft: 30,
-    backgroundColor: 'transparent',
-    position: 'relative',
-    top: 110,
-    left: -135
+    color: 'white',
+    fontSize: 50,
+    marginTop: 40,
+    marginLeft: 30,
+    backgroundColor: 'transparent'
   },
   deck: {
     flexDirection: 'row',
     shadowColor: '#000',
     shadowOffset: {width: 0, height: 2},
     shadowOpacity: .2,
-    backgroundColor: '#CCC',
-    height: 250,
-    width: 170,
-    marginLeft: 20
+    backgroundColor: '#CCC'
   },
   decktype: {
-    marginTop: 100,
-    width: 170,
-    height: 45,
-    backgroundColor: '#F1AA9D',
-    borderTopWidth: 4,
-    borderBottomWidth: 4,
-    borderColor: '#AB1F23',
-    shadowColor: '#000',
-    shadowOffset: {width: 0, height: 2},
-    shadowOpacity: .4
+    width: 10,
+    height: 150,
+    backgroundColor: 'red',
   }
 });
