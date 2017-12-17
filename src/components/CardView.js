@@ -4,7 +4,6 @@ import { Actions } from 'react-native-router-flux';
 
 export default class Deck extends React.Component {
   render() {
-    console.log(this.props.card);
     return (
       <View style={styles.container}>
         <Image style={styles.img} source={require('../../assets/img/app_background.png')} />

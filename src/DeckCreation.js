@@ -9,10 +9,6 @@ import { Actions } from 'react-native-router-flux';
 
 class DeckCreation extends React.Component {
 
-  cardView(card){
-    return console.log(card.imageUrl)
-  }
-
   renderCard(card){
     let swipeOptions = [
     {
